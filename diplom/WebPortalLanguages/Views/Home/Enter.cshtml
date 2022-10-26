@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Вход"; //"Home Page";
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+    
+<body>
+    <h1 style="text-align: center">Вход</h1>
+    <!--col-md-4-->
+    <form method="post" class="col needs-validation">
+        <div class="col-12" style="text-align:center">
+            <label for="validationCustomUsername" class="form-label">Логин</label>
+            <input type="text" class="form-control" id="login" placeholder="Логин" required name="login">
+        </div>
+        <div class="col-12" style="text-align:center">
+            <label for="validationCustom03" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="pass" placeholder="Пароль" required
+                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])\S{8,}"
+                   title="Пароль должен содержать от 8 символов (английские строчные, заглавные, цифры и спец символы)"
+                   name="pass">
+            <link>Забыли пароль?
+        </div>
+        <br />
+        <div class="col-12" style="text-align:center">
+            <button class="btn btn-primary" type="submit">Вход</button>
+            <br />
+            <a asp-controller="Home" asp-action="Register">Регистрация</a>
+        </div>
+    </form>
+</body>
+</html>

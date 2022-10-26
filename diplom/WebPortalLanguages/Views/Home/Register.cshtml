@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Регистрация"; //"Home Page";
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <h1 style="text-align: center">Регистрация на портале</h1>
+    <form method="post" class="col-12 needs-validation">
+        <div class="col-sm-4">
+            <label for="validationCustomUsername" class="form-label">Логин</label>
+            <div class="input-group has-validation">
+                <input type="text" class="form-control" id="Login" aria-describedby="inputGroupPrepend" name="Login" required>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationCustom03" class="form-label">Пароль</label>
+            <input type="password" class="form-control" id="Pass" required
+                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])\S{8,}"
+                   title="Пароль должен содержать от 8 символов (английские строчные, заглавные, цифры и спец символы)"
+                   name="Pass">
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationCustom03" class="form-label">Подтверждение пароля</label>
+            <input type="password" class="form-control" id="DoublePass" required
+                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^a-zA-Z0-9])\S{8,}"
+                   title="Пароль должен содержать от 8 символов (английские строчные, заглавные, цифры и спец символы)"
+                   name="Pass">
+        </div>
+
+        <div class="col-md-4">
+            <label for="validationCustomUsername" class="form-label">Почта</label>
+            <div class="input-group has-validation">
+                <input type="email" class="form-control" id="Email"
+                       aria-describedby="inputGroupPrepend" placeholder="name@gmail.com" required
+                       name="Email">
+            </div>
+        </div>
+
+        <div class="col-12" style="text-align:center">
+            <button id="buttonRegister" class="btn btn-primary" type="submit" asp-controller="User" asp-action="Register">Регистрация</button>
+            <br />
+            <a href="Enter">Вход</a>
+        </div>
+    </form>
+</body>
+</html>
